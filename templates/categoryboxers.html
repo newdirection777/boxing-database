@@ -1,0 +1,17 @@
+
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<h1>List Of Boxers For {{category.name}} Category</h1>
+
+<a href = '{{url_for('AddBoxer', category_id = category.id) }}'>Add New Boxer</a>
+
+<h2>Number Of Boxers: {{boxers.count()}}</h2>
+
+{% for b in boxers %}
+	<a href = {{url_for('BoxerInfo', category_id = b.category_id, boxer_id = b.id)}}>{{b.name}}</a><br><br>
+{% endfor %}
+
+{% endblock %}
+

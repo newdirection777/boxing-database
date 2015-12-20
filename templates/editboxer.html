@@ -1,0 +1,25 @@
+
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+<h1>Edit Boxer: {{boxer.name}}</h1>
+
+<form action = "#" method = 'post'>
+
+	<p>Name:</p>
+	<input type = 'text' size = '30' name = 'name' placeholder='{{boxer.name}}'>
+
+	<p>Description:</p>
+	<input type = 'text' size = '60' name = 'description' placeholder='{{boxer.description}}'>
+	
+	<input type = 'submit' value = 'Edit'>
+
+	<a href = {{url_for('CategoryBoxers', category_id = boxer.category_id)}}>Cancel</a>
+
+</form>
+
+
+{% endblock %}
+

@@ -1,0 +1,21 @@
+
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<h1>Famous Boxers</h1>
+A Totally Subjective List Of Notable Fighters
+
+<h2>Boxing Categories:</h2>
+{% for c in categories %}
+	<a href = {{url_for('CategoryBoxers', category_id = c.id)}}>{{c.name}}</a><br><br>
+{% endfor %}
+
+
+<h2>Most Recently Added Boxers:</h2>
+{% for b in boxers %}
+	<a href = {{url_for('BoxerInfo', category_id = b.category_id, boxer_id = b.id)}}>{{b.name}}</a><br><br>
+{% endfor %}
+
+{% endblock %}
+

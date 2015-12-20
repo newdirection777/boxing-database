@@ -1,0 +1,18 @@
+
+
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+<h1>Boxer Info: {{boxer.name}}</h1>
+
+Name: {{boxer.name}}<br>
+Category: {{boxer.category.name}}<br>
+Description: {{boxer.description}}<br>
+<br>
+
+
+{% endblock %}
+
+

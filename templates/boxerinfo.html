@@ -1,0 +1,22 @@
+
+
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+<h1>Boxer Info: {{boxer.name}}</h1>
+
+Name: {{boxer.name}}<br>
+Category: {{boxer.category.name}}<br>
+Description: {{boxer.description}}<br>
+<br>
+
+<a href='{{url_for('EditBoxer', category_id = boxer.category_id, boxer_id=boxer.id)}}'>Edit</a><br>
+<a href='{{url_for('DeleteBoxer', category_id = boxer.category_id, boxer_id=boxer.id)}}'>Delete</a>
+
+
+{% endblock %}
+
+
+

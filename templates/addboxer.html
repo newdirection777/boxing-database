@@ -1,0 +1,23 @@
+
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<h1>Add Boxer to {{category.name}} Category</h1>
+
+<form action = "{{url_for('AddBoxer', category_id=category.id )}}" method = 'post'>
+
+	<p>Name:</p>
+	<input type = 'text' size = '30' name = 'name'>
+
+	<p>Description:</p>
+	<input type = 'text' size = '60' name = 'description'>
+	
+	<input type = 'submit' value = 'Add'>
+
+	<a href = {{url_for('CategoryBoxers', category_id = category.id)}}>Cancel</a>
+
+</form>
+
+{% endblock %}
+

@@ -1,0 +1,22 @@
+
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+<h1>Delete Boxer: {{boxer.name}}</h1>
+
+
+<form action = "{{url_for('DeleteBoxer',category_id = boxer.category_id, boxer_id=boxer.id)}}" method = 'post'>
+
+	<h3> Are you sure you want to delete this boxer? </h3>
+	
+	<input type = 'submit' value = 'Delete'>
+
+	<a href = {{url_for('CategoryBoxers', category_id = boxer.category_id)}}>Cancel</a>
+
+</form>
+
+
+{% endblock %}
+
